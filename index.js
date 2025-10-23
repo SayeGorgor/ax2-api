@@ -58,7 +58,8 @@ const dbOptions = {
     useUnifiedTopology: true
 };
 mongoose.connect(process.env.DB_URI, dbOptions)
-.then(() => console.log('DB connected!'));
+.then(() => console.log('DB connected!'))
+.catch(err => console.error('MongoDB connection error:', err));;
 
 const port = process.env.PORT || 8080;
 const server = app.listen(port, () => {
