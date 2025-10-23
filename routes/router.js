@@ -309,4 +309,8 @@ router.put('/tasks', async(req, res) => {
     }
 });
 
+router.get('/test', async(req, res) => {
+    res.status(200).send('Server is running');
+})
+
 export default router;
