@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
 const allowedOrigins = [
-    'ax2.onrender.com',
+    'https://ax2.onrender.com',
     'http://localhost:5173'
 ]
 
