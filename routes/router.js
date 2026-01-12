@@ -152,6 +152,20 @@ router.put('/projects', async(req, res) => {
             message: 'Error Renaming Project'
         });
     }
+});
+
+router.delete('/projects', async(req, res) => {
+    const { projectID } = req.query;
+    const projects = schemas.Projects;
+    const deleted = await projects.findOneAndDelete({ projectID }).exec();
+    if(!deleted) {
+        return res.status(400).send({ 
+            success: false, 
+            message: 'Error Deleting Projects'
+        });
+    }
+
+    return res.status(200).send({ success: true });
 })
 
 router.get('/tasks', async(req, res) => {
